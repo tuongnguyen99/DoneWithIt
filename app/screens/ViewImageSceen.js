@@ -1,19 +1,22 @@
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import React from "react";
-import {
-  Image,
-  ImageBackground,
-  StyleSheet,
-  TouchableHighlight,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
+import colors from "../config/colors";
 
 function ViewImageSceen(props) {
   return (
     <View style={styles.container}>
       <View style={styles.buttonsContainer}>
-        <TouchableOpacity style={styles.closeButton}></TouchableOpacity>
-        <TouchableOpacity style={styles.deleteButton}></TouchableOpacity>
+        <TouchableOpacity style={styles.closeButton} activeOpacity={0.6}>
+          <MaterialCommunityIcons name="close" size={40} color={colors.white} />
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.deleteButton} activeOpacity={0.6}>
+          <MaterialCommunityIcons
+            name="trash-can-outline"
+            size={40}
+            color={colors.white}
+          />
+        </TouchableOpacity>
       </View>
       <View style={styles.imageContainer}>
         <Image
@@ -41,12 +44,14 @@ const styles = StyleSheet.create({
   closeButton: {
     width: 50,
     height: 50,
-    backgroundColor: "#fc5c65",
+    justifyContent: "center",
+    alignItems: "center",
   },
   deleteButton: {
     width: 50,
     height: 50,
-    backgroundColor: "#4ECDC4",
+    justifyContent: "center",
+    alignItems: "center",
   },
   imageContainer: { flex: 1 },
   image: {

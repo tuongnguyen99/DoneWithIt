@@ -1,12 +1,7 @@
 import React from "react";
-import {
-  Image,
-  ImageBackground,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
+import AppButton from "../components/AppButton";
+import colors from "../config/colors";
 
 function WelcomeScreen() {
   return (
@@ -17,11 +12,11 @@ function WelcomeScreen() {
     >
       <View style={styles.logoContainer}>
         <Image source={require("../assets/logo-red.png")} style={styles.logo} />
-        <Text>Sell What You Don't Want</Text>
+        <Text style={styles.tagline}>Sell What You Don't Want</Text>
       </View>
-      <View>
-        <TouchableOpacity style={styles.loginButton}></TouchableOpacity>
-        <TouchableOpacity style={styles.registerButton}></TouchableOpacity>
+      <View style={styles.buttonsContainer}>
+        <AppButton title="login" color="primary" />
+        <AppButton title="resgister" color="secondary" />
       </View>
     </ImageBackground>
   );
@@ -37,18 +32,25 @@ const styles = StyleSheet.create({
     marginTop: 100,
     alignItems: "center",
   },
+  tagline: {
+    fontWeight: "bold",
+    marginTop: 20,
+    fontSize: 18,
+  },
   logo: {
     width: 100,
     height: 100,
   },
-  buttonsContainer: {},
+  buttonsContainer: {
+    paddingHorizontal: 20,
+  },
   loginButton: {
     height: 60,
-    backgroundColor: "#fc5c65",
+    backgroundColor: colors.primary,
   },
   registerButton: {
     height: 60,
-    backgroundColor: "#4ECDC4",
+    backgroundColor: colors.secondary,
   },
 });
 
