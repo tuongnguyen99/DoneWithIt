@@ -1,5 +1,6 @@
 import React from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
+import ListItem from "../components/ListItem";
 
 function ListingDetailsScreen(props) {
   return (
@@ -9,17 +10,7 @@ function ListingDetailsScreen(props) {
         <Text style={styles.title}>Red jacket for sale</Text>
         <Text style={styles.subTitle}>$100</Text>
       </View>
-      <View style={styles.authorContainer}>
-        <Image
-          source={require("../assets/tuong.jpg")}
-          style={styles.avatar}
-          resizeMode="cover"
-        />
-        <View style={styles.authorDetailsContainer}>
-          <Text style={styles.authorName}>Tuong Nguyen</Text>
-          <Text>9 Listings</Text>
-        </View>
-      </View>
+      <ListItem />
     </View>
   );
 }
@@ -38,23 +29,6 @@ const styles = StyleSheet.create({
   },
   subTitle: {
     color: "coral",
-  },
-  authorContainer: {
-    paddingHorizontal: 20,
-    flexDirection: "row",
-  },
-  authorDetailsContainer: {
-    paddingHorizontal: 10,
-    justifyContent: "center",
-  },
-  avatar: {
-    width: 60,
-    height: 60,
-    borderRadius: 50,
-  },
-  authorName: {
-    fontWeight: "bold",
-    fontSize: 16,
   },
 });
 
