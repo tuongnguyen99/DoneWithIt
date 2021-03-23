@@ -10,7 +10,7 @@ function ListingDetailsScreen(props) {
         <Text style={styles.title}>Red jacket for sale</Text>
         <Text style={styles.subTitle}>$100</Text>
       </View>
-      <ListItem />
+      <ListItem image={require('../assets/tuong.jpg')} title="Tuong Nguyen" subTitle="9 Listings"/>
     </View>
   );
 }
